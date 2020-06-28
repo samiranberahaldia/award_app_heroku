@@ -1,0 +1,18 @@
+<html>
+<head>ML API</head>
+<body>
+
+
+<h1>Predict Award</h1>
+<form action="{{ url_for('predict')}}"ethod="post">
+<input type = "text", name="Age"		, placeholder="Age"			, required="required"/>
+<input type = "text", name="Gender"		, placeholder="Gender"		, required="required"/>
+<input type = "text", name="Percentage" , placeholder="Percentage"	, required="required"/>
+<button type="submit"> Predict </button>
+</form>
+<br>
+
+{{prediction_text}}
+
+</body>
+</html>
