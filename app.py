@@ -3,7 +3,7 @@ from flask import Flask, request, jsonify, render_template
 import pickle
 
 app = Flask(__name__)
-model = pickle.load(open('lr_model.pkl', 'rb'))
+lrs = pickle.load(open('lr_model.pkl', 'rb'))
 
 @app.route('/')
 def home():
@@ -13,7 +13,7 @@ def home():
 def predict():
     features = [int[x] for x in request.forms.values()]
     features = [np.array(features)]
-    y_prediction = model.predict(features)    
+    y_prediction = lrs.predict(features)    
     
     return render_template('award_index.html', prediction_text='Employee Salary should be $ {}'.format(y_prediction))   
 
