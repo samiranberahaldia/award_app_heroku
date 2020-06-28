@@ -12,7 +12,7 @@ def home():
 @app.route('/predict',methods=['POST'])
 def predict():
     features = [int(x) for x in request.form.values()]
-    final_features = [np.array(int_features)]
+    final_features = [np.array(features)]
     prediction = model.predict(final_features)
     
     return render_template('award_index.html', prediction_text='Employee Salary should be $ {}'.format(prediction[0]))   
