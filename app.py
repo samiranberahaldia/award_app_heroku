@@ -15,7 +15,7 @@ def predict():
     features = [np.array(features)]
     y_prediction = model.predict(features)    
     
-    return render_template('award_index.html', prediction_text = y_prediction)   
+    return render_template('award_index.html', prediction_text='Employee Salary should be $ {}'.format(y_prediction))   
 
 if __name__=="__main__":
     app.run(debug=True)
